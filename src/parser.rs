@@ -17,12 +17,13 @@ pub enum Element {
 
 #[derive(Default, Debug)]
 pub struct AtomData {
-    item_id: usize,
-    atom_id: usize,
-    element: Element,
-    position: Vector
+    pub item_id: usize,
+    pub atom_id: usize,
+    pub element: Element,
+    pub position: Vector
 }
 
+#[derive(Debug)]
 pub struct FileContent {
     pub timestep: usize,
     pub atom_count: usize,
@@ -63,6 +64,7 @@ pub fn read_dump<P: AsRef<Path>>(filepath: P) -> Result<Vec<FileContent>> {
     Ok(file_contents)
 }
 
+#[derive(Debug)]
 struct Header {
     timestep: usize,
     atom_count: usize,
