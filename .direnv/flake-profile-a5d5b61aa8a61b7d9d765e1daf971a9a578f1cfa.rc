@@ -41,7 +41,7 @@ NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
 NIX_HARDENING_ENABLE='bindnow format fortify fortify3 libcxxhardeningfast pic relro stackclashprotection stackprotector strictflexarrays1 strictoverflow zerocallusedregs'
 export NIX_HARDENING_ENABLE
-NIX_LDFLAGS='-rpath /home/jay/Projects/python/qbc/outputs/out/lib '
+NIX_LDFLAGS='-rpath /home/jay/Project/python/qbc/outputs/out/lib '
 export NIX_LDFLAGS
 NIX_NO_SELF_RPATH='1'
 NIX_STORE='/nix/store'
@@ -134,7 +134,7 @@ name='nix-shell-env'
 export name
 nativeBuildInputs='/nix/store/8k7nm8lgd3kyns018jlfr37b1h5dj9yl-uv-0.11.15'
 export nativeBuildInputs
-out='/home/jay/Projects/python/qbc/outputs/out'
+out='/home/jay/Project/python/qbc/outputs/out'
 export out
 outputBin='out'
 outputDev='out'
@@ -165,7 +165,7 @@ preConfigurePhases=' updateAutotoolsGnuConfigScriptsPhase'
 declare -a preFixupHooks=('_moveToShare' '_multioutDocs' '_multioutDevs' )
 preferLocalBuild='1'
 export preferLocalBuild
-prefix='/home/jay/Projects/python/qbc/outputs/out'
+prefix='/home/jay/Project/python/qbc/outputs/out'
 declare -a propagatedBuildDepFiles=('propagated-build-build-deps' 'propagated-native-build-inputs' 'propagated-build-target-deps' )
 propagatedBuildInputs=''
 export propagatedBuildInputs
