@@ -27,13 +27,15 @@ calc = UPETCalculator(
 )
 
 def get_force_uncertainty(atoms: Atoms) -> ndarray:
-    return
+    forces = atoms.get_forces()
+    return forces
 
 def main():
     frames = iread(filename="./dump.out", format="lammps-dump-text")
 
     energy_uncertainties: List[np.ndarray] = []
     force_uncertainties: List[np.ndarray] = []
+
     for idx, atoms in enumerate(frames):
         atoms.calc = calc
         energy_uc = atoms.calc.get_energy_uncertainty(atoms)
@@ -41,6 +43,8 @@ def main():
 
         energy_uncertainties.append(energy_uc)
         force_uncertainties.append(force_uc)
+
+    print(len(energy_uncertainties))
 
 if __name__ == "__main__":
     main()
